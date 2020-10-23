@@ -12,7 +12,8 @@ docker pull inspircd/inspircd-docker #IRC
 #docker pull rocketchat/rocket.chat:latest
 #https://github.com/RocketChat/Rocket.Chat.Electron/releases
 docker pull cloudposse/kiwiirc #kiwiirc server
-
+docker pull sebp/elk
+docker pull django
 
 
 #repository
@@ -34,20 +35,31 @@ git clone https://github.com/huggingface/datasets.git   #Huggingface Dataset
 git clone https://github.com/NVIDIA/apex
 git clone https://github.com/GradySimon/tensorflow-glove.git
 
-git clone https://github.com/kakao/khaiii.git
-cd khaiii/docker
-docker build -tag khaiii:1.0 .
-cd ~
-
 
 
 #oracle client & oracle Python for windows
 wget https://download.oracle.com/otn_software/nt/instantclient/19800/instantclient-basic-windows.x64-19.8.0.0.0dbru.zip
 wget https://files.pythonhosted.org/packages/d7/ea/82d831396f3552ab73950b2c5ccf938f9a766ac8407152459ae6fc7349f3/cx_Oracle-8.0.1-cp35-cp35m-win32.whl
 
+#cygwin
 wget https://www.cygwin.com/setup-x86_64.exe #irssi https://irssi.org/download/
 #wget https://kiwiirc.com/downloads/kiwiirc_20.05.24.1-1_amd64.deb
 
-
+#pyCharm
+wget https://download.jetbrains.com/python/pycharm-community-2020.2.tar.gz
+sudo snap install pycharm-community --classic
 
 #Datasets
+git clone https://github.com/e9t/nsmc.git #naver movie reviews
+git clone https://github.com/monologg/KoBERT-KorQuAD.git #korquad 1.0
+# https://www.slideshare.net/YoungHCHO/hanbert-korquad-20-by-twoblock-ai
+git clone https://github.com/korquad/korquad.github.io.git #korquad 2.0
+wget https://storage.googleapis.com/paws/english/wiki_raw_and_mapping.tar.gz #PAWS similar sentences
+
+
+#download transformers models
+docker exec jkim52902/km1-10137:transformers 'python3.7 /workspace/modelDownload.py'
+
+
+
+

@@ -15,7 +15,7 @@ RUN cd ~ && \
     ./configure && \
     make altinstall 
 
-RUN pip3.7 install --upgrade --no-cache-dir pip setuptools wheel cmake jupyter memory-profiler mock numpy scipy scikit-learn pandas pytest pyarrow matplotlib cx_Oracle
+RUN pip3.7 install --upgrade --no-cache-dir pip setuptools wheel cmake jupyter memory-profiler mock numpy scipy scikit-learn pandas pytest pyarrow matplotlib cx_Oracle tokenizers
 
 RUN ln -s /usr/local/cuda /usr/local/nvidia
 

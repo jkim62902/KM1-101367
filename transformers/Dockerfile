@@ -14,10 +14,9 @@ WORKDIR /worksapce
 RUN git clone https://github.com/huggingface/transformers.git
 COPY ./modelDownload.py transformers/
 RUN cd transformers && \
-    python3.7 -m pip install --no-cache-dir . && \
-    python3.7 modelDownload.py && \
-    cd /workspace 
+    python3.7 -m pip install --no-cache-dir . 
 
+#RUN python3.7 modelDownload.py
 
 
 
