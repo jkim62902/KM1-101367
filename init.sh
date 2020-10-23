@@ -10,8 +10,15 @@ cd Python-3.7.4
 make altinstall
 cd ..
 
+
 curl https://get.docker.com | sh
 systemctl start docker && systemctl enable docker
+
+
+
+
+# for workstation
+apt -y install nvidia-driver-450
 distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
 curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | apt-key add -
 curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | tee /etc/apt/sources.list.d/nvidia-docker.list
@@ -23,4 +30,8 @@ apt-get install -y nvidia-docker2
 rm -rf /var/lib/apt/lists
 
 
+cd ~
+git clone https://github.com/jkim62902/KM1-101367.git
+cd KM1-101367
+sh download_docker.sh
 
