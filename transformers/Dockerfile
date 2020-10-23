@@ -2,7 +2,7 @@ FROM jkim62902/km1-101367:ml
 LABEL maintainer="JK"
 LABEL repository="transformers"
 
-RUN pip3.7 install --upgrade --no-cache-dir spacy gensim matplotlib beautifulsoup4 pyarrow tensorflow tensorflow_addons tensorboard tensorboardX torch bert-for-tf2 keras coverage docutils nose nose-exclude Pygments pycodestyle twine sentencepiece tf_sentencepiece git+https://github.com/haven-jeon/PyKoSpacing.git soynlp mittens fasttext 
+RUN pip3.7 install --upgrade --no-cache-dir tensorflow tensorflow_addons tensorboard tensorboardX torch bert-for-tf2 keras coverage docutils nose nose-exclude Pygments pycodestyle twine sentencepiece tf_sentencepiece git+https://github.com/haven-jeon/PyKoSpacing.git soynlp mittens fasttext 
 
 RUN git clone https://github.com/NVIDIA/apex && \
     cd apex && \
