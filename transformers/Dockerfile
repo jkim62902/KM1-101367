@@ -32,7 +32,7 @@ RUN git clone https://github.com/kaniblu/hangul-utils.git && \
     bash install_twkorean.sh && \
     python3.7 setup.py install && \
     cd /workspace && \
-    wget https://bitbucket.org/eunjeon/mecab-ko-dic/downloads/mecab-ko-dic-2.1.1-20180720.tar.gz && \
+    curl -O https://bitbucket.org/eunjeon/mecab-ko-dic/downloads/mecab-ko-dic-2.1.1-20180720.tar.gz && \
     tar -zxvf mecab-ko-dic-2.1.1-20180720.tar.gz && \
     cd mecab-ko-dic-2.1.1-20180720 && \
     ./configure && \

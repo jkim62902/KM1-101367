@@ -1,8 +1,8 @@
-FROM jkim62902/km1-101367
+FROM jkim62902/km1-101367:ml
 LABEL maintainer="JK"
 LABEL repository="roBERTa"
 
-RUN pip3.7 install --upgrade --no-cache-dir pip setuptools wheel jupyter torch pyarrow
+RUN pip3.7 install --upgrade --no-cache-dir torch 
 
 RUN git clone https://github.com/NVIDIA/apex
 RUN cd apex && \
@@ -11,8 +11,8 @@ RUN cd apex && \
   --global-option="--fast_multihead_attn" ./
 
 WORKDIR /worksapce
-RUN git clone https://github.com/pytorch/fairseq.git 
-RUN cd fairseq && \
+RUN git clone https://github.com/pytorch/fairseq.git && \
+    cd fairseq && \
     pip3.7 install --editable ./
 
 
