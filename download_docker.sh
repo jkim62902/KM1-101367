@@ -32,10 +32,11 @@ git clone https://github.com/huggingface/transformers.git   #Huggingface Transfo
 git clone https://github.com/huggingface/tokenizers.git     #Huggingface Tokenizers
 git clone https://github.com/huggingface/datasets.git   #Huggingface Dataset
 git clone https://github.com/NVIDIA/apex
+git clone https://github.com/GradySimon/tensorflow-glove.git
 
 git clone https://github.com/kakao/khaiii.git
 cd khaiii/docker
-docker build --tag khaiii:1.0
+docker build -tag khaiii:1.0 .
 cd ~
 
 

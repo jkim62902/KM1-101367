@@ -1,8 +1,8 @@
-FROM jkim62902/km1-101367
+FROM jkim62902/km1-101367:ml
 LABEL maintainer="JK"
 LABEL repository="transformers"
 
-RUN pip3.7 install --upgrade --no-cache-dir pip setuptools wheel jupyter cmake memory-profiler mock numpy scipy scikit-learn pandas pytest cx_Oracle  spacy gensim matplotlib beautifulsoup4 pyarrow tensorflow tensorflow_addons tensorboard tensorboardX torch bert-for-tf2 keras coverage docutils nose nose-exclude Pygments pycodestyle twine sentencepiece tf_sentencepiece git+https://github.com/haven-jeon/PyKoSpacing.git soynlp
+RUN pip3.7 install --upgrade --no-cache-dir spacy gensim matplotlib beautifulsoup4 pyarrow tensorflow tensorflow_addons tensorboard tensorboardX torch bert-for-tf2 keras coverage docutils nose nose-exclude Pygments pycodestyle twine sentencepiece tf_sentencepiece git+https://github.com/haven-jeon/PyKoSpacing.git soynlp mittens fasttext git+https://github.com/haven-jeon/PyKoSpacing.git
 
 RUN git clone https://github.com/NVIDIA/apex && \
     cd apex && \
