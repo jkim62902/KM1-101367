@@ -61,5 +61,5 @@ wget https://storage.googleapis.com/paws/english/wiki_raw_and_mapping.tar.gz #PA
 docker exec jkim52902/km1-10137:transformers 'python3.7 /workspace/modelDownload.py'
 python3 download_glue_data.py
 
-
+## 이미지 / 텍스트 학습데이터 구축용 도커
 
