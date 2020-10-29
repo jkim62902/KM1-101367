@@ -1,5 +1,5 @@
 apt update
-apt -y install build-essential ca-certificates apt-transport-https libcurl4-gnutls-dev libxml2-dev libssl-dev gnupg-agent software-properties-common wget module-init-tools kmod apt-utils git bash scp gnupg2 pass tcl uuid java-11-openjdk gpg
+apt -y install build-essential ca-certificates apt-transport-https libcurl4-gnutls-dev libxml2-dev libssl-dev gnupg-agent software-properties-common wget module-init-tools kmod apt-utils git bash scp gnupg2 pass tcl uuid java-11-openjdk gpg zip
 
 cd ~
 curl -O https://www.python.org/ftp/python/3.7.4/Python-3.7.4.tgz
