@@ -14,6 +14,7 @@ docker pull inspircd/inspircd-docker #IRC
 docker pull cloudposse/kiwiirc #kiwiirc server
 docker pull sebp/elk
 docker pull django
+docker pull tensorflow/tensorflow:1.15.4-gpu-py3
 
 
 #repository
