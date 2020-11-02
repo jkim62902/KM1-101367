@@ -15,6 +15,7 @@ docker pull cloudposse/kiwiirc #kiwiirc server
 docker pull sebp/elk
 docker pull django
 docker pull tensorflow/tensorflow:1.15.4-gpu-py3
+docker pull chakkiworks/doccano
 
 
 #repository
@@ -35,7 +36,28 @@ git clone https://github.com/huggingface/tokenizers.git     #Huggingface Tokeniz
 git clone https://github.com/huggingface/datasets.git   #Huggingface Dataset
 git clone https://github.com/NVIDIA/apex
 git clone https://github.com/GradySimon/tensorflow-glove.git
+git clone https://github.com/horovod/horovod.git
 
+
+#Doccano document tagger
+git clone https://github.com/doccano/doccano.git
+cd doccano
+docker-compose -f docker-compose.prod.yml up
+cd ..
+
+#bella document tagger
+git clone https://github.com/dennybritz/bella.git
+cd bella
+docker build --tag bella:latest .
+cd ..
+
+
+#cvat image annotation
+git clone https://github.com/openvinotoolkit/cvat.git
+cd cvat
+docker build --tag cvat:latest
+docker-compose -f docker-compose.yml up
+cd ..
 
 
 #oracle client & oracle Python for windows
