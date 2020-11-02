@@ -4,12 +4,13 @@ LABEL repository="bort"
 
 #RUN pip3.7 install --upgrade --no-cache-dir tensorflow-gpu~=1.15 mittens
 RUN apt update &&\
-    apt install openMPI
+    apt install cmake libopenmpi-dev python3-dev zlib1g-dev libgl1-mesa-glx 
 
 
 WORKDIR /worksapce
 RUN git clone https://github.com/alexa/bort.git 
 RUN cd bort && \
+    pip3.7 install stable-baselines[mpi] && \
     pip3.7 install -r requirements.txt && \
     pip3.7 uninstall horovod && \
     HOROVOD_CUDA_HOME=/usr/local/nvidia \
