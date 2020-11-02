@@ -4,7 +4,7 @@ LABEL repository="bort"
 
 #RUN pip3.7 install --upgrade --no-cache-dir tensorflow-gpu~=1.15 mittens
 RUN apt update &&\
-    apt install cmake libopenmpi-dev python3-dev zlib1g-dev libgl1-mesa-glx 
+    apt -y install cmake libopenmpi-dev python3-dev zlib1g-dev libgl1-mesa-glx 
 
 
 WORKDIR /worksapce
