@@ -3,6 +3,8 @@ LABEL maintainer="JK"
 LABEL repository="bort"
 
 #RUN pip3.7 install --upgrade --no-cache-dir tensorflow-gpu~=1.15 mittens
+RUN apt update &&\
+    apt install openMPI
 
 
 WORKDIR /worksapce
