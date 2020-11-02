@@ -1,4 +1,4 @@
-FROM jkim62902/km1-101367:ml
+FROM jkim62902/km1-101367:transformers
 LABEL maintainer="JK"
 LABEL repository="bort"
 
