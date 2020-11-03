@@ -3,7 +3,7 @@ LABEL maintainer="JK"
 LABEL repository="tf1.15"
 
 RUN pip uninstall -y tensorflow typing
-RUN pip install -y --upgrade --no-cache-dir tensorflow-gpu~=1.15 mittens
+RUN pip install --upgrade --no-cache-dir tensorflow-gpu~=1.15 mittens
 
 
 WORKDIR /workspace
