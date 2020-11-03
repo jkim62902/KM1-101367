@@ -8,6 +8,7 @@ RUN git clone https://github.com/alexa/bort.git
 RUN cd bort && \
     pip install gluonnlp==0.8.3 numpy==1.16.2 regex tqdm mxboard && \
     wget https://github.com/dmlc/gluon-nlp/blob/v0.9.x/scripts/bert/sample_text.txt && \
+    mkdir test_data && \
     mv sample_text.txt test_data/
 
 
