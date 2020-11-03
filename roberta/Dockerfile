@@ -4,6 +4,7 @@ LABEL repository="roBERTa"
 
 
 WORKDIR /workspace
+RUN pip uninstall -y typing
 RUN git clone https://github.com/pytorch/fairseq.git && \
     cd fairseq && \
     pip install --editable ./
