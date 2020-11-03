@@ -2,8 +2,8 @@ FROM jkim62902/km1-101367:horovod
 LABEL maintainer="JK"
 LABEL repository="tf1.15"
 
-RUN pip uninstall tensorflow
-RUN pip3.7 install --upgrade --no-cache-dir tensorflow-gpu~=1.15 mittens
+RUN pip uninstall -y tensorflow typing
+RUN pip install -y --upgrade --no-cache-dir tensorflow-gpu~=1.15 mittens
 
 
 WORKDIR /workspace
