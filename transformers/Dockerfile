@@ -7,7 +7,7 @@ RUN pip3.7 install --upgrade --no-cache-dir tensorflow tensorflow_addons tensorb
 RUN git clone https://github.com/NVIDIA/apex && \
     cd apex && \
     python3.7 setup.py install && \
-    pip install -v --no-cache-dir --global-option="--cpp_ext" --global-option="--cuda_ext" ./
+    pip3.7 install -v --no-cache-dir --global-option="--cpp_ext" --global-option="--cuda_ext" ./
 
 
 WORKDIR /worksapce
