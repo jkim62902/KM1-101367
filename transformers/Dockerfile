@@ -3,13 +3,13 @@ LABEL maintainer="JK"
 LABEL repository="transformers"
 
 RUN pip install --upgrade --no-cache-dir tensorflow_addons tensorboard tensorboardX torch bert-for-tf2 keras coverage docutils nose nose-exclude Pygments pycodestyle twine sentencepiece tf_sentencepiece git+https://github.com/haven-jeon/PyKoSpacing.git soynlp mittens fasttext 
-
+RUN pip uninstall -y typing
 
 WORKDIR /workspace
 RUN git clone https://github.com/huggingface/transformers.git
 COPY ./modelDownload.py transformers/
 RUN cd transformers && \
-    python3.7 -m pip install --no-cache-dir . 
+    python -m pip install --no-cache-dir . 
 
 #RUN python3.7 modelDownload.py
 
