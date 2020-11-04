@@ -8,6 +8,7 @@ docker pull mediawiki
 docker pull postgres
 docker pull nginx
 docker pull huggingface/transformers
+docker pull huggingface/transformers-tensorflow-gpu
 docker pull inspircd/inspircd-docker #IRC
 #docker pull rocketchat/rocket.chat:latest
 #https://github.com/RocketChat/Rocket.Chat.Electron/releases
@@ -16,6 +17,8 @@ docker pull sebp/elk
 docker pull django
 docker pull tensorflow/tensorflow:1.15.4-gpu-py3
 docker pull chakkiworks/doccano
+docker pull nvcr.io/nvidia/tensorflow:20.10-tf2-py3
+docker pull nvcr.io/nvidia/tensorflow:20.10-tf1-py3
 
 
 #repository
@@ -37,6 +40,11 @@ git clone https://github.com/huggingface/datasets.git   #Huggingface Dataset
 git clone https://github.com/NVIDIA/apex
 git clone https://github.com/GradySimon/tensorflow-glove.git
 git clone https://github.com/horovod/horovod.git
+git clone https://github.com/alexa/bort.git
+git clone https://github.com/google-research/multilingual-t5.git 
+git clone https://github.com/google-research/text-to-text-transfer-transformer.git
+
+
 
 
 #Doccano document tagger
@@ -77,7 +85,7 @@ git clone https://github.com/e9t/nsmc.git #naver movie reviews
 git clone https://github.com/monologg/KoBERT-KorQuAD.git #korquad 1.0
 # https://www.slideshare.net/YoungHCHO/hanbert-korquad-20-by-twoblock-ai
 git clone https://github.com/korquad/korquad.github.io.git #korquad 2.0
-wget https://storage.googleapis.com/paws/english/wiki_raw_and_mapping.tar.gz #PAWS similar sentences
+curl -O https://storage.googleapis.com/paws/english/wiki_raw_and_mapping.tar.gz #PAWS similar sentences
 
 
 #download transformers models
@@ -85,4 +93,28 @@ docker exec jkim52902/km1-10137:transformers 'python3.7 /workspace/modelDownload
 python3 download_glue_data.py
 
 ## 이미지 / 텍스트 학습데이터 구축용 도커
-git clone https://github.com/alexa/bort.git
+#style-gan pre-trained model
+mkdir style-gan-models
+cd style-gan-models
+curl -O https://nvlabs-fi-cdn.nvidia.com/stylegan2-ada/pretrained/metfaces.pkl
+curl -O https://nvlabs-fi-cdn.nvidia.com/stylegan2-ada/pretrained/cifar10.pkl
+curl -O https://nvlabs-fi-cdn.nvidia.com/stylegan2-ada/pretrained/ffhq.pkl
+cd ..
+
+# 이미지 데이터
+#flikr face images
+git clone https://github.com/NVlabs/ffhq-dataset.git
+cd ffhq-dataset
+python download_ffhq.py --json --images
+cd ..
+
+#cifar10
+curl -O https://www.cs.toronto.edu/~kriz/cifar-10-python.tar.gz
+
+
+#T5 model download
+mT5-Small (300 million parameters): gs://t5-data/pretrained_models/mt5/small
+mT5-Base (600 million parameters): gs://t5-data/pretrained_models/mt5/base
+mT5-Large (1 billion parameters): gs://t5-data/pretrained_models/mt5/large
+mT5-XL (4 billion parameters): gs://t5-data/pretrained_models/mt5/xl
+mT5-XXL (13 billion parameters): gs://t5-data/pretrained_models/mt5/xxl
