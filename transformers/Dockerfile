@@ -2,7 +2,7 @@ FROM jkim62902/km1-101367:horovod
 LABEL maintainer="JK"
 LABEL repository="transformers"
 
-RUN pip install --upgrade --no-cache-dir tensorflow_addons tensorboard tensorboardX torch bert-for-tf2 keras coverage docutils nose nose-exclude Pygments pycodestyle twine sentencepiece tf_sentencepiece git+https://github.com/haven-jeon/PyKoSpacing.git soynlp mittens fasttext 
+RUN pip install --upgrade --no-cache-dir tensorflow_addons tensorboard tensorboardX torch bert-for-tf2 keras coverage docutils nose nose-exclude Pygments pycodestyle twine sentencepiece tf_sentencepiece git+https://github.com/haven-jeon/PyKoSpacing.git soynlp mittens fasttext t5[gcp]
 RUN pip uninstall -y typing
 
 WORKDIR /workspace
