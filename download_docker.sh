@@ -19,6 +19,7 @@ docker pull tensorflow/tensorflow:1.15.4-gpu-py3
 docker pull chakkiworks/doccano
 docker pull nvcr.io/nvidia/tensorflow:20.10-tf2-py3
 docker pull nvcr.io/nvidia/tensorflow:20.10-tf1-py3
+docker pull store/oracle/database-instantclient:12.2.0.1
 
 
 #repository
