@@ -17,6 +17,7 @@ SHELL ["/bin/bash", "-cu"]
 
 RUN apt-get update && apt-get install -y --allow-downgrades --allow-change-held-packages --no-install-recommends \
         build-essential \
+        apt-utils \
         cmake \
         g++-4.8 \
         git \
@@ -49,7 +50,7 @@ RUN curl -O https://bootstrap.pypa.io/get-pip.py && \
 RUN pip install future typing packaging
 RUN pip install tensorflow==${TENSORFLOW_VERSION} \
                 keras \
-                h5py
+                h5py~=2.10
 
 RUN PYTAGS=$(python -c "from packaging import tags; tag = list(tags.sys_tags())[0]; print(f'{tag.interpreter}-{tag.abi}')") && \
     pip install https://download.pytorch.org/whl/cu101/torch-${PYTORCH_VERSION}%2Bcu101-${PYTAGS}-linux_x86_64.whl \

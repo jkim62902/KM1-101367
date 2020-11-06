@@ -1,4 +1,4 @@
-from transformers import AutoTokenizer, TFAutoModel
+from transformers import AutoTokenizer, TFAutoModel, ElectraModel, ElectraTokenizer, TFElectraModel, BertModel, DistilBertModel
 
 #Bert
 tokenizer = AutoTokenizer.from_pretrained("bert-base-uncased")
@@ -22,4 +22,26 @@ model = TFAutoModel.from_pretrained("roberta-base")
 tokenizer = AutoTokenizer.from_pretrained("roberta-large")
 model = TFAutoModel.from_pretrained("roberta-large")
 
+
+#koelectra
+model = ElectraModel.from_pretrained("monologg/koelectra-base-discriminator")  # KoELECTRA-Base
+model = ElectraModel.from_pretrained("monologg/koelectra-small-discriminator")  # KoELECTRA-Small
+model = ElectraModel.from_pretrained("monologg/koelectra-base-v2-discriminator")  # KoELECTRA-Base-v2
+model = ElectraModel.from_pretrained("monologg/koelectra-small-v2-discriminator")  # KoELECTRA-Small-v2
+model = ElectraModel.from_pretrained("monologg/koelectra-base-v3-discriminator")  # KoELECTRA-Base-v3
+model = ElectraModel.from_pretrained("monologg/koelectra-small-v3-discriminator")  # KoELECTRA-Small-v3
+tokenizer = ElectraTokenizer.from_pretrained("monologg/koelectra-base-discriminator")  # KoELECTRA-Base
+tokenizer = ElectraTokenizer.from_pretrained("monologg/koelectra-small-discriminator")  # KoELECTRA-Small
+tokenizer = ElectraTokenizer.from_pretrained("monologg/koelectra-base-v2-discriminator")  # KoELECTRA-Base-v2
+tokenizer = ElectraTokenizer.from_pretrained("monologg/koelectra-small-v2-discriminator")  # KoELECTRA-Small-v2
+tokenizer = ElectraTokenizer.from_pretrained("monologg/koelectra-base-v3-discriminator")  # KoELECTRA-Base-v3
+tokenizer = ElectraTokenizer.from_pretrained("monologg/koelectra-small-v3-discriminator")  # KoELECTRA-Small-v3
+
+model = TFElectraModel.from_pretrained("monologg/koelectra-base-v3-discriminator", from_pt=True)  #IF model
+
+
+#kobert
+model = BertModel.from_pretrained('monologg/kobert')
+model = DistilBertModel.from_pretrained('monologg/distilkobert')
+tokenizer = AutoTokenizer.from_pretrained("monologg/kobert") # https://github.com/monologg/DistilKoBERT
 

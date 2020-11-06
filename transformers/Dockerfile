@@ -12,6 +12,10 @@ RUN cd transformers && \
     python -m pip install --no-cache-dir . 
 
 #RUN python3.7 modelDownload.py
+RUN git clone https://github.com/google-research/multilingual-t5.git && \
+    git clone https://github.com/google-research/text-to-text-transfer-transformer.git
+
+
 
 
 

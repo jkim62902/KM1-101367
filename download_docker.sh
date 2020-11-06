@@ -48,6 +48,7 @@ git clone https://github.com/google-research/text-to-text-transfer-transformer.g
 
 
 
+
 #Doccano document tagger
 git clone https://github.com/doccano/doccano.git
 cd doccano
@@ -87,6 +88,8 @@ git clone https://github.com/monologg/KoBERT-KorQuAD.git #korquad 1.0
 # https://www.slideshare.net/YoungHCHO/hanbert-korquad-20-by-twoblock-ai
 git clone https://github.com/korquad/korquad.github.io.git #korquad 2.0
 curl -O https://storage.googleapis.com/paws/english/wiki_raw_and_mapping.tar.gz #PAWS similar sentences
+git clone https://github.com/naver/nlp-challenge.git #naver NER
+
 
 
 #download transformers models
@@ -114,6 +117,7 @@ curl -O https://www.cs.toronto.edu/~kriz/cifar-10-python.tar.gz
 
 
 #T5 model download
+cd data
 mT5-Small (300 million parameters): gs://t5-data/pretrained_models/mt5/small
 mT5-Base (600 million parameters): gs://t5-data/pretrained_models/mt5/base
 mT5-Large (1 billion parameters): gs://t5-data/pretrained_models/mt5/large
