@@ -15,7 +15,7 @@ RUN cd ~ && \
     ./configure && \
     make altinstall 
 
-RUN pip3.7 install --upgrade --no-cache-dir pip setuptools wheel cmake jupyter memory-profiler mock numpy scipy scikit-learn pandas pytest pyarrow matplotlib cx_Oracle flask opencv-python imutils Pillow scikit-image tokenizers beautifulsoup4 requests bz
+RUN pip3.7 install --upgrade --no-cache-dir pip setuptools wheel cmake jupyter memory-profiler mock numpy scipy scikit-learn pandas pytest pyarrow matplotlib cx_Oracle flask opencv-python imutils Pillow scikit-image tokenizers beautifulsoup4 requests bz django
 
 
 

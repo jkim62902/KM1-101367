@@ -1,5 +1,5 @@
 apt update
-apt -y install build-essential ca-certificates apt-transport-https libcurl4-gnutls-dev libxml2-dev libssl-dev gnupg-agent software-properties-common wget module-init-tools kmod apt-utils git bash scp gnupg2 pass tcl uuid java-11-openjdk gpg zip
+apt -y install build-essential ca-certificates apt-transport-https libcurl4-gnutls-dev libxml2-dev libssl-dev gnupg-agent software-properties-common wget module-init-tools kmod apt-utils git bash scp gnupg2 pass tcl uuid java-11-openjdk gpg zip unzip
 
 cd ~
 curl -O https://www.python.org/ftp/python/3.7.4/Python-3.7.4.tgz
@@ -43,3 +43,20 @@ curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add
 echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee -a /etc/apt/sources.list.d/kubernetes.list
 sudo apt-get update
 sudo apt-get install -y kubectl
+
+
+#sublim
+
+wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
+sudo apt-get install apt-transport-https
+echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
+sudo apt-get update
+sudo apt-get install sublime-text
+
+wget https://release.sublimegit.net/SublimeGit.zip #git plugin
+git clone https://github.com/bgreenlee/sublime-github #git plugin
+git clone https://github.com/icjmaa/MySFTP #SFTP plugin
+
+
+# 모두의 말뭉치 다운
+

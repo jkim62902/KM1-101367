@@ -1,47 +1,19 @@
-from transformers import AutoTokenizer, TFAutoModel, ElectraModel, ElectraTokenizer, TFElectraModel, BertModel, DistilBertModel
+from transformers import AutoModel, AutoTokenizer, TFAutoModel
 
-#Bert
-tokenizer = AutoTokenizer.from_pretrained("bert-base-uncased")
-model = TFAutoModel.from_pretrained("bert-base-uncased")
-tokenizer = AutoTokenizer.from_pretrained("bert-base-cased")
-model = TFAutoModel.from_pretrained("bert-base-cased")
-
-tokenizer = AutoTokenizer.from_pretrained("bert-large-uncased")
-model = TFAutoModel.from_pretrained("bert-large-uncased")
-tokenizer = AutoTokenizer.from_pretrained("bert-large-cased")
-model = TFAutoModel.from_pretrained("bert-large-cased")
-
-tokenizer = AutoTokenizer.from_pretrained("bert-base-multilingual-uncased")
-model = TFAutoModel.from_pretrained("bert-base-multilingual-uncased")
-tokenizer = AutoTokenizer.from_pretrained("bert-base-multilingual-cased")
-model = TFAutoModel.from_pretrained("bert-base-multilingual-cased")
-
-#roBERTa
-tokenizer = AutoTokenizer.from_pretrained("roberta-base")
-model = TFAutoModel.from_pretrained("roberta-base")
-tokenizer = AutoTokenizer.from_pretrained("roberta-large")
-model = TFAutoModel.from_pretrained("roberta-large")
+tr_models = ["monologg/koelectra-base-discriminator", "monologg/koelectra-small-discriminator", "monologg/koelectra-base-v2-discriminator", "monologg/koelectra-small-v2-discriminator", "monologg/koelectra-base-v3-discriminator", "monologg/koelectra-small-v3-discriminator", 'monologg/kobert', 'monologg/distilkobert', "hfl/chinese-electra-180g-large-discriminator", "hfl/chinese-electra-180g-base-discriminator", "hfl/chinese-electra-180g-small-ex-discriminator"]
 
 
-#koelectra
-model = ElectraModel.from_pretrained("monologg/koelectra-base-discriminator")  # KoELECTRA-Base
-model = ElectraModel.from_pretrained("monologg/koelectra-small-discriminator")  # KoELECTRA-Small
-model = ElectraModel.from_pretrained("monologg/koelectra-base-v2-discriminator")  # KoELECTRA-Base-v2
-model = ElectraModel.from_pretrained("monologg/koelectra-small-v2-discriminator")  # KoELECTRA-Small-v2
-model = ElectraModel.from_pretrained("monologg/koelectra-base-v3-discriminator")  # KoELECTRA-Base-v3
-model = ElectraModel.from_pretrained("monologg/koelectra-small-v3-discriminator")  # KoELECTRA-Small-v3
-tokenizer = ElectraTokenizer.from_pretrained("monologg/koelectra-base-discriminator")  # KoELECTRA-Base
-tokenizer = ElectraTokenizer.from_pretrained("monologg/koelectra-small-discriminator")  # KoELECTRA-Small
-tokenizer = ElectraTokenizer.from_pretrained("monologg/koelectra-base-v2-discriminator")  # KoELECTRA-Base-v2
-tokenizer = ElectraTokenizer.from_pretrained("monologg/koelectra-small-v2-discriminator")  # KoELECTRA-Small-v2
-tokenizer = ElectraTokenizer.from_pretrained("monologg/koelectra-base-v3-discriminator")  # KoELECTRA-Base-v3
-tokenizer = ElectraTokenizer.from_pretrained("monologg/koelectra-small-v3-discriminator")  # KoELECTRA-Small-v3
+tf_models = ["bert-base-uncased", "bert-base-cased", "bert-large-uncased", "bert-large-cased", "bert-base-multilingual-uncased", "bert-base-multilingual-cased", "roberta-base", "roberta-large", "monologg/koelectra-base-v3-discriminator"]
 
-model = TFElectraModel.from_pretrained("monologg/koelectra-base-v3-discriminator", from_pt=True)  #IF model
+#torch model
+for tr_model in tr_models:
+    tokenizer = AutoTokenizer.from_pretrained(tr_model)
+    model = AutoModel.from_pretrained(tr_model)
+
+#tf model
+for tf_model in tf_models:
+    tokenizer = AutoTokenizer.from_pretrained(tr_model)
+    model = TFAutoModel.from_pretrained(tr_model)
 
 
-#kobert
-model = BertModel.from_pretrained('monologg/kobert')
-model = DistilBertModel.from_pretrained('monologg/distilkobert')
-tokenizer = AutoTokenizer.from_pretrained("monologg/kobert") # https://github.com/monologg/DistilKoBERT
 

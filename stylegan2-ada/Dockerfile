@@ -6,7 +6,7 @@
 # distribution of this software and related documentation without an express
 # license agreement from NVIDIA CORPORATION is strictly prohibited.
 
-ARG BASE_IMAGE=nvcr.io/nvidia/tensorflow:20.10-tf1-py3
+ARG BASE_IMAGE=nvcr.io/nvidia/tensorflow:20.09-tf1-py3
 FROM $BASE_IMAGE
 
 RUN pip install scipy==1.3.3 requests==2.22.0 Pillow==6.2.1 h5py==2.9.0 imageio==2.9.0 imageio-ffmpeg==0.4.2 tqdm==4.49.0

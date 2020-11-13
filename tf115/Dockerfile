@@ -1,9 +1,8 @@
-FROM jkim62902/km1-101367:horovod
+FROM nvcr.io/nvidia/tensorflow:20.09-tf1-py3
 LABEL maintainer="JK"
 LABEL repository="tf1.15"
 
-RUN pip uninstall -y tensorflow typing
-RUN pip install --upgrade --no-cache-dir tensorflow-gpu~=1.15 mittens
+RUN pip3 install --upgrade --no-cache-dir mittens numpy sklearn scipy 
 
 
 WORKDIR /workspace
