@@ -1,5 +1,23 @@
+
+cat /etc/apt/sources.list
+# :%s/kr.archive.ubuntu.com/mirror.kakao.com
+
+
+
 apt update
-apt -y install build-essential ca-certificates apt-transport-https libcurl4-gnutls-dev libxml2-dev libssl-dev gnupg-agent software-properties-common wget module-init-tools kmod apt-utils git bash scp gnupg2 pass tcl uuid java-11-openjdk gpg zip unzip
+
+apt -y install build-essential ca-certificates apt-transport-https libcurl4-gnutls-dev libxml2-dev libssl-dev gnupg-agent software-properties-common wget module-init-tools kmod apt-utils git bash scp gnupg2 pass tcl uuid java-11-openjdk gpg zip unzip gem ruby ruby-bundler vim
+
+gem install bundler
+
+
+apt-get install language-pack-ko
+locale-gen ko_KR.UTF-8
+dpkg-reconfigure locales
+update-locale LANG=ko_KR.UTF-8 LC_MESSAGES=POSIX
+
+
+
 
 cd ~
 curl -O https://www.python.org/ftp/python/3.7.4/Python-3.7.4.tgz
@@ -28,6 +46,14 @@ apt-get install -y nvidia-docker2
 
 
 rm -rf /var/lib/apt/lists
+
+
+
+systemctl stop docker
+#mkdir data folder
+cat /etc/docker/daemon.json
+# add "data-root": "/data/folder",
+systemctl start docker
 
 
 cd ~
@@ -59,4 +85,26 @@ git clone https://github.com/icjmaa/MySFTP #SFTP plugin
 
 
 # 모두의 말뭉치 다운
+
+
+
+
+
+
+
+
+
+
+
+
+
+#office
+wget https://www.libreoffice.org/donate/dl/deb-x86_64/7.0.3/ko/LibreOffice_7.0.3_Linux_x86-64_deb.tar.gz
+wget http://download.documentfoundation.org/libreoffice/stable/7.0.3/deb/x86_64/LibreOffice_7.0.3_Linux_x86-64_deb_langpack_ko.tar.gz
+wget http://download.documentfoundation.org/libreoffice/stable/7.0.3/deb/x86_64/LibreOffice_7.0.3_Linux_x86-64_deb_helppack_ko.tar.gz
+
+
+
+
+
 

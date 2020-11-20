@@ -66,7 +66,8 @@ git clone https://github.com/mattermost/mattermost-plugin-github.git
 git clone https://github.com/altsol/redmine_mattermost.git redmine_mattermost
 git clone https://github.com/mattermost/mattermost-plugin-jenkins.git
 
-
+git clone https://github.com/AlphaNodes/redmine_messenger.git plugins/redmine_messenger
+git clone https://github.com/altsol/redmine_mattermost.git redmine_mattermost
 
 
 
