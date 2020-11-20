@@ -2,7 +2,9 @@
 docker pull registry
 docker pull nvidia/cuda:11.1-cudnn8-devel-ubuntu18.04
 docker pull jenkins
+docker pull jenkins/jenkins
 docker pull redmine
+docker pull sameersbn/redmine
 docker pull mysql
 docker pull mediawiki
 docker pull postgres
@@ -21,6 +23,18 @@ docker pull nvcr.io/nvidia/tensorflow:20.09-tf2-py3
 docker pull nvcr.io/nvidia/tensorflow:20.09-tf1-py3
 docker pull store/oracle/database-instantclient:12.2.0.1
 docker pull wkentaro/labelme
+
+#docker run --name mattermost-preview -d --publish 8065:8065 --add-host dockerhost:127.0.0.1 mattermost/mattermost-preview
+docker pull mattermost/mattermost-preview
+git clone https://github.com/mattermost/mattermost-docker.git
+cd mattermost-docker
+mkdir -p ./volumes/app/mattermost/{data,logs,config,plugins}
+chown -R 2000:2000 ./volumes/app/mattermost/
+docker-compose build && docker-compose up -d
+
+#mattermost client
+wget https://releases.mattermost.com/desktop/4.6.1/mattermost-desktop-setup-4.6.1-win.exe
+wget https://releases.mattermost.com/desktop/4.6.1/mattermost-desktop-4.6.1-linux-x64.tar.gz
 
 
 #repository
@@ -46,6 +60,12 @@ git clone https://github.com/alexa/bort.git
 git clone https://github.com/google-research/multilingual-t5.git 
 git clone https://github.com/google-research/text-to-text-transfer-transformer.git
 git clone https://github.com/google/automl.git
+
+#mattermost plugin
+git clone https://github.com/mattermost/mattermost-plugin-github.git
+git clone https://github.com/altsol/redmine_mattermost.git redmine_mattermost
+git clone https://github.com/mattermost/mattermost-plugin-jenkins.git
+
 
 
 
