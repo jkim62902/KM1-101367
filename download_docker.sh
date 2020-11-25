@@ -23,6 +23,7 @@ docker pull nvcr.io/nvidia/tensorflow:20.09-tf2-py3
 docker pull nvcr.io/nvidia/tensorflow:20.09-tf1-py3
 docker pull store/oracle/database-instantclient:12.2.0.1
 docker pull wkentaro/labelme
+docker pull sonatype/nexus3
 
 #docker run --name mattermost-preview -d --publish 8065:8065 --add-host dockerhost:127.0.0.1 mattermost/mattermost-preview
 docker pull mattermost/mattermost-preview
