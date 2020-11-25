@@ -178,3 +178,8 @@ wget https://storage.googleapis.com/cloud-tpu-checkpoints/efficientdet/coco/effi
 wget http://images.cocodataset.org/zips/val2017.zip
 wget http://images.cocodataset.org/annotations/annotations_trainval2017.zip
 wget http://images.cocodataset.org/annotations/image_info_test2017.zip
+
+
+
+#maven
+wget https://downloads.apache.org/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.zip
