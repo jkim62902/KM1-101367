@@ -1,4 +1,4 @@
-FROM nvcr.io/nvidia/tensorflow:20.10-tf2-py3
+FROM nvcr.io/nvidia/tensorflow:20.09-tf2-py3
 
 LABEL maintainer="JK"
 LABEL repository="nvcr-tf2"
@@ -10,6 +10,9 @@ RUN pip install --upgrade --no-cache-dir -i http://ftp.daumkakao.com/pypi/simple
 
 
 WORKDIR "/workspace"
+COPY download_models.py
+
+RUN python3 download_models.py
 
 #RoBERTa
 RUN git clone https://github.com/pytorch/fairseq.git && \
