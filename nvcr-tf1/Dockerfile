@@ -1,4 +1,4 @@
-FROM nvcr.io/nvidia/tensorflow:20.10-tf1-py3
+FROM nvcr.io/nvidia/tensorflow:20.09-tf1-py3
 LABEL maintainer="JK"
 LABEL repository="nvcr-tf1"
 
@@ -8,6 +8,9 @@ RUN apt-get update && apt-get install -y libgl1-mesa-glx && \
 RUN pip install --upgrade --no-cache-dir -i http://ftp.daumkakao.com/pypi/simple --trusted-host ftp.daumkakao.com pip virtualenv mittens scikit-learn pandas bz pytest matplotlib nose pyarrow torch transformers seqeval fastprogress attrdict kobert-transformers
 
 WORKDIR "/workspace"
+COPY modelDownload.py
+
+RUN python modelDownload.py
 
 RUN git clone https://github.com/google-research/bert.git
 RUN git clone https://github.com/google-research/electra.git
