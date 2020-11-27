@@ -26,7 +26,7 @@ docker pull wkentaro/labelme
 docker pull sonatype/nexus3
 
 #docker run --name mattermost-preview -d --publish 8065:8065 --add-host dockerhost:127.0.0.1 mattermost/mattermost-preview
-docker pull mattermost/mattermost-preview
+#docker pull mattermost/mattermost-preview
 git clone https://github.com/mattermost/mattermost-docker.git
 cd mattermost-docker
 mkdir -p ./volumes/app/mattermost/{data,logs,config,plugins}
@@ -105,6 +105,7 @@ curl -O https://www.cygwin.com/setup-x86_64.exe #irssi https://irssi.org/downloa
 
 #pyCharm
 curl -O https://download.jetbrains.com/python/pycharm-community-2020.2.tar.gz
+https://www.jetbrains.com/ko-kr/pycharm/download/download-thanks.html?platform=windows&code=PCC
 sudo snap install pycharm-community --classic
 
 #eclipse
@@ -115,6 +116,8 @@ wget https://www.eclipse.org/downloads/download.php?file=/egit/updates/org.eclip
 
 #sublim
 wget https://download.sublimetext.com/Sublime%20Text%20Build%203211%20x64%20Setup.exe
+wget https://download.sublimetext.com/sublime_text_3_build_3211_x64.tar.bz2
+
 
 #Datasets
 git clone https://github.com/e9t/nsmc.git #naver movie reviews
