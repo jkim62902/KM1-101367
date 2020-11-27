@@ -10,9 +10,9 @@ RUN pip install --upgrade --no-cache-dir -i http://ftp.daumkakao.com/pypi/simple
 
 
 WORKDIR "/workspace"
-COPY download_models.py
+COPY modelDownload.py
 
-RUN python3 download_models.py
+RUN python3 modelDownload.py
 
 #RoBERTa
 RUN git clone https://github.com/pytorch/fairseq.git && \
