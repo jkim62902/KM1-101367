@@ -10,8 +10,8 @@ docker pull mediawiki
 docker pull postgres
 docker pull nginx
 docker pull huggingface/transformers
-docker pull huggingface/transformers-tensorflow-gpu
-docker pull inspircd/inspircd-docker #IRC
+#docker pull huggingface/transformers-tensorflow-gpu
+#docker pull inspircd/inspircd-docker #IRC
 #docker pull rocketchat/rocket.chat:latest
 #https://github.com/RocketChat/Rocket.Chat.Electron/releases
 docker pull cloudposse/kiwiirc #kiwiirc server
