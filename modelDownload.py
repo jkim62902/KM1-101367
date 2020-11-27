@@ -7,13 +7,15 @@ tf_models = ["bert-base-uncased", "bert-base-cased", "bert-large-uncased", "bert
 
 #torch model
 for tr_model in tr_models:
-    tokenizer = AutoTokenizer.from_pretrained(tr_models)
-    model = AutoModel.from_pretrained(tr_models)
+    print(tr_model)
+    tokenizer = AutoTokenizer.from_pretrained(tr_model)
+    model = AutoModel.from_pretrained(tr_model)
 
 #tf model
 for tf_model in tf_models:
-    tokenizer = AutoTokenizer.from_pretrained(tf_models)
-    model = TFAutoModel.from_pretrained(tf_models)
+    print(tf_model)
+    tokenizer = AutoTokenizer.from_pretrained(tf_model)
+    model = TFAutoModel.from_pretrained(tf_model)
 
 
 
