@@ -204,3 +204,6 @@ wget https://storage.googleapis.com/cloud-tpu-checkpoints/efficientdet/coco/effi
 wget https://storage.googleapis.com/cloud-tpu-checkpoints/efficientdet/coco/efficientdet-d7x.tar.gz
 
 
+# stylegan2 모델 다운!!!!!!!
+https://github.com/NVlabs/stylegan2-ada.git
+https://github.com/NVlabs/stylegan2.git
