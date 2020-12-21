@@ -1,0 +1,23 @@
+dockers:
+nvidia electra
+https://github.com/NVIDIA/DeepLearningExamples/blob/master/TensorFlow2/LanguageModeling/ELECTRA/Dockerfile
+redmine plugin gems
+doccano/doccano
+
+
+
+https://taisou.tistory.com/625
+
+offline package
+https://pkgs.org/download/apt-offline
+
+
+sent attach
+
+
+git clone https://github.com/likejazz/korean-sentence-splitter.git
+pip3 install kss
+
+
+git clone https://github.com/lovit/soyspacing.git
+pip3 install soyspacing
