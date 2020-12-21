@@ -1,8 +1,21 @@
 dockers:
 nvidia electra
 https://github.com/NVIDIA/DeepLearningExamples/blob/master/TensorFlow2/LanguageModeling/ELECTRA/Dockerfile
+
+
 redmine plugin gems
+#redmine 연결
+https://github.com/altsol/redmine_mattermost.git
+bundle install
+
+cd $REDMINE_ROOT
+git clone https://github.com/AlphaNodes/redmine_messenger.git plugins/redmine_messenger
+bundle update
+bundle exec rake redmine:plugins:migrate RAILS_ENV=production
+
+
 doccano/doccano
+
 
 
 
